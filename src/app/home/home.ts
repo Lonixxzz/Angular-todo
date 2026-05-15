@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { Greeting } from '../components/greeting/greeting';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Greeting],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+  homemessage = signal('hello world');
+  keyUpHandler(event: KeyboardEvent) {
+    console.log(event.key);
+  }
+}

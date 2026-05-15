@@ -8,9 +8,15 @@ import { Header } from './components/header/header';
   imports: [RouterOutlet, Home, Header],
   template: `
     <app-header />
-    <app-home />
+    <main>
+      <app-home />
+    </main>
   `,
-  styleUrl: './app.scss',
+  styles: `
+    main {
+      padding: 16px 8px;
+    }
+  `,
 })
 export class App {
   protected readonly title = signal('todo');
